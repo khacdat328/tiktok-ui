@@ -4,19 +4,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { faEllipsisVertical, faMagnifyingGlass, faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
+
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import image from '~/assets/images';
-import styles from './Header.module.scss';
 import AccountItems from '~/components/AccountItems';
+import Button from '~/components/Button';
+import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
 
 function Header() {
    const [searchResult, setSearchResult] = useState([]);
 
-   useEffect(() => {
-
-   }, []);
+   useEffect(() => {}, []);
    return (
       <header className={cx('wrapper')}>
          <div className={cx('inner')}>
@@ -30,17 +30,14 @@ function Header() {
                render={(attrs) => (
                   <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                      <PopperWrapper>
-						<h4 className={cx('search-title')}>
-							Account
-						</h4>
-						<AccountItems/>
-						<AccountItems/>
-						<AccountItems/>
-					 </PopperWrapper>
+                        <h4 className={cx('search-title')}>Account</h4>
+                        <AccountItems />
+                        <AccountItems />
+                        <AccountItems />
+                     </PopperWrapper>
                   </div>
                )}
             >
-               {/* <div className={cx('search-box')}> */}
                <div className={cx('search')}>
                   <input
                      type="text"
@@ -58,18 +55,13 @@ function Header() {
                      <FontAwesomeIcon icon={faMagnifyingGlass} />
                   </button>
                </div>
-               {/* </div> */}
             </Tippy>
 
-            <div className={cx('acion')}>
-               <button className={cx('upload')}>
-                  <FontAwesomeIcon icon={faPlus} />
+            <div className={cx('action')}>
+               <Button type="outline" leftIcon={<FontAwesomeIcon icon={faMagnifyingGlass} />}>
                   Upload
-               </button>
-               <button className={cx('login-btn')}>Log in</button>
-               <button className={cx('more')}>
-                  <FontAwesomeIcon icon={faEllipsisVertical} />
-               </button>
+               </Button>
+               <Button type="primary">Log in</Button>
             </div>
          </div>
       </header>
