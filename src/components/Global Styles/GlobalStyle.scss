@@ -4,6 +4,10 @@
 :root{
     --header-height: 60px;
     --text-color: rgba(22, 24, 35, 1);
+    --black: #000;
+    --white: #fff; 
+    --primary: rgba(254, 44, 85, 1);
+
 }
 html{
     font-size: 62.5%;
@@ -19,7 +23,6 @@ body{
     line-height: 1.5;
     text-rendering: optimizeSpeed;
     color: var(--text-color);
-
 }
 
 button, input{
@@ -29,5 +32,5 @@ button, input{
 
 a[href] {
     color: var(--text-color);
-    text-decoration: underline;
+    text-decoration: none;
 }
