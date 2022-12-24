@@ -1,5 +1,7 @@
 .wrapper {
    cursor: pointer;
+   display: flex;
+   justify-content: center;
    padding: 9px 11px;
    min-width: 100px;
    font-size: 1.6rem;
@@ -69,3 +71,13 @@
    padding: 4px 10px;
 }
 
+.icon + .title,
+.title + .icon {
+   margin-left: 10px;
+}
+
+.icon{
+   display: inline-block;
+   width: 24px;
+   text-align: center;
+}
