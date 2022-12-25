@@ -18,12 +18,30 @@ import AccountItems from '~/components/AccountItems';
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import Menu from '~/components/Popper/Menu';
+import MenuItem from '~/components/Popper/Menu/MenuItems';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
    {
       icon: <FontAwesomeIcon icon={faEarthAsia} />,
       title: 'English',
+      children: {
+         title: 'Language',
+         data: [
+            {
+               code: 'en',
+               title: 'english',
+            },
+            {
+               code: 'vi',
+               title: 'Vietnamese',
+            },
+            {
+               code: 'fr',
+               title: 'france',
+            },
+         ],
+      },
    },
    {
       icon: <FontAwesomeIcon icon={faQuestionCircle} />,
@@ -38,6 +56,7 @@ const MENU_ITEMS = [
 function Header() {
    const [searchResult, setSearchResult] = useState([]);
 
+   const handleMenuChange = (MenuItem) => console.log(MenuItem);
    useEffect(() => {}, []);
    return (
       <header className={cx('wrapper')}>
@@ -84,7 +103,7 @@ function Header() {
                   Upload
                </Button>
                <Button type="primary">Log in</Button>
-               <Menu items={MENU_ITEMS}>
+               <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                   <button className={cx('more-btn')}>
                      <FontAwesomeIcon icon={faEllipsisVertical} />
                   </button>

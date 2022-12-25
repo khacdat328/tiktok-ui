@@ -8,7 +8,8 @@
 .inner {
    height: 100%;
    width: 1150px;
-   background: rgba(255, 255, 255, 1);
+   padding: 0 20px;
+   // background: rgba(255, 255, 255, 1);
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -91,6 +92,7 @@
 	align-items: center;
 }
 .more-btn {
+   cursor: pointer;
    background: transparent;
    margin-left: 10px;
    padding: 2px 8px;
