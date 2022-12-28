@@ -1,36 +1,57 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
 
-:root{
-    --header-height: 60px;
-    --text-color: rgba(22, 24, 35, 1);
-    --black: #000;
-    --white: #fff; 
-    --primary: rgba(254, 44, 85, 1);
-    
+:root {
+   --header-height: 60px;
+   --text-color: #161823;
+   --black: #000;
+   --white: #fff;
+   --primary: rgba(254, 44, 85, 1);
 }
-html{
-    font-size: 62.5%;
+html {
+   font-size: 62.5%;
 }
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
 }
-body{
-    font-family: 'Poppins', sans-serif ;
-    font-size: 1.6rem;
-    line-height: 1.5;
-    text-rendering: optimizeSpeed;
-    color: var(--text-color);
-}
-
-button, input{
-    border: none;
-    outline: none;
+body {
+   font-family: 'ProximaNova', sans-serif;
+   font-size: 1.6rem;
+   line-height: 1.5;
+   text-rendering: optimizeSpeed;
+   color: var(--text-color);
 }
 
+button,
+input {
+   border: none;
+   outline: none;
+}
+button {
+   background: transparent;
+}
 a[href] {
-    color: var(--text-color);
-    text-decoration: none;
+   color: var(--text-color);
+   text-decoration: none;
+}
+
+// custom tippy tooltip
+body {
+   .tippy-box {
+      background-color: rgba(84, 84, 84, 0.92);
+      color: rgb(255, 255, 255);
+      font-size: 16px;
+      font-weight: 600;
+   }
+   .tippy-arrow {
+      color: rgba(84, 84, 84, 0.92);
+   }
+   .tippy-content {
+      padding: 8px 9px;
+   }
+   .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+      top: -8px;
+   }
 }

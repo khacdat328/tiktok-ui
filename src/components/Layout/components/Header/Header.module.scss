@@ -87,14 +87,32 @@
 .search-input:not(:placeholder-shown) ~ .search-button {
    color: rgba(22, 24, 35, 0.75);
 }
+
+
 .action{
 	display: flex;
 	align-items: center;
 }
+
 .more-btn {
    cursor: pointer;
    background: transparent;
    margin-left: 10px;
    padding: 2px 8px;
    font-size: 2rem;
+}
+
+.action-btn{
+   font-size: 2.3rem;
+   padding: 3px;
+   color: #161823;
+   cursor: pointer;
+   margin-left: 16px;
+}
+.user-avatar{
+   width: 32px;
+   height: 32px;
+   border-radius: 50%;
+   object-fit: cover;
+   margin-left: 16px;
 }
