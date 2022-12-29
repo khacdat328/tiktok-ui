@@ -15,7 +15,7 @@ import {
    faPlus,
    faQuestionCircle,
    faSpinner,
-   faUser
+   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
@@ -29,6 +29,7 @@ import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import Menu from '~/components/Popper/Menu';
 import MenuItem from '~/components/Popper/Menu/MenuItems';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -96,13 +97,13 @@ function Header() {
          icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
          title: 'Log out',
          to: '/logout',
-         separate: true
+         separate: true,
       },
    ];
    return (
       <header className={cx('wrapper')}>
          <div className={cx('inner')}>
-            <div className={cx('site-logo')} href="#">
+            <div className={cx('site-logo')}>
                <img src={image.logo} alt="logo" />
             </div>
 
@@ -168,7 +169,11 @@ function Header() {
                )}
                <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                   {currentUser ? (
-                     <img className={cx('user-avatar')} src={avatarIcon} alt="img" />
+                     <Image
+                        className={cx('user-avatar')}
+                        src={avatarIcon}
+                        alt="img"
+                     />
                   ) : (
                      <button className={cx('more-btn')}>
                         <FontAwesomeIcon icon={faEllipsisVertical} />
