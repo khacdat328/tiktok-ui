@@ -12,9 +12,11 @@ import {
    faQuestionCircle,
    faUser,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
+import routesConfig from '~/config/routes';
 import avatarIcon from '~/assets/images/User_Avatar.png';
 import image from '~/assets/images';
 import Button from '~/components/Button';
@@ -93,11 +95,11 @@ function Header() {
    return (
       <header className={cx('wrapper')}>
          <div className={cx('inner')}>
-            <div className={cx('site-logo')}>
+            <Link to={routesConfig.home} className={cx('site-logo')}>
                <img src={image.logo} alt="logo" />
-            </div>
+            </Link>
 
-            <Search/>
+            <Search />
 
             <div className={cx('action')}>
                {currentUser ? (
@@ -115,6 +117,7 @@ function Header() {
                      <Tippy delay={[0, 100]} content="Inbox">
                         <button className={cx('action-btn')}>
                            <FontAwesomeIcon icon={faMessage} />
+                           <span className={cx('badge')}>12</span>
                         </button>
                      </Tippy>
                   </>

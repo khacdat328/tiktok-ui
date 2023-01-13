@@ -15,15 +15,13 @@
    align-items: center;
 }
 
-.site-logo img{
+.site-logo img {
    vertical-align: middle;
 }
 
-
-
-.action{
-	display: flex;
-	align-items: center;
+.action {
+   display: flex;
+   align-items: center;
 }
 
 .more-btn {
@@ -34,14 +32,31 @@
    font-size: 2rem;
 }
 
-.action-btn{
-   font-size: 2.3rem;
+.action-btn {
+   position: relative;
+   font-size: 2rem;
    padding: 3px;
    color: #161823;
    cursor: pointer;
    margin-left: 16px;
 }
-.user-avatar{
+
+.badge {
+   position: absolute;
+   top: -5px;
+   right: -5px;
+   font-size: 1.1rem;
+   color: var(--white);
+   background-color: var(--primary);
+   font-weight: 600;
+   font-family: var(--font-family);
+   padding: 0 6px;
+   height: 1.5rem;
+   border-radius: 10px;
+   line-height: 1.5rem;
+}
+
+.user-avatar {
    width: 32px;
    height: 32px;
    border-radius: 50%;
