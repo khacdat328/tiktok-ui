@@ -61,7 +61,7 @@ const MENU_ITEMS = [
 function Header() {
    const currentUser = true;
 
-   const handleMenuChange = (MenuItem) => console.log(MenuItem);
+   // const handleMenuChange = (MenuItem) => console.log(MenuItem);
 
    const userMenu = [
       {
@@ -129,7 +129,7 @@ function Header() {
                      <Button type="primary">Log in</Button>
                   </>
                )}
-               <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+               <Menu items={currentUser ? userMenu : MENU_ITEMS}>
                   {currentUser ? (
                      <Image className={cx('user-avatar')} src={avatarIcon} alt="img" />
                   ) : (
