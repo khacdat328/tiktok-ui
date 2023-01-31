@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
@@ -56,4 +57,17 @@ function Button({
    );
 }
 
+Button.propTypes = {
+   to: PropTypes.string,
+   href: PropTypes.string,
+   leftIcon: PropTypes.node,
+   rightIcon: PropTypes.node,
+   type: PropTypes.string,
+   secondType: PropTypes.string,
+   size: PropTypes.string,
+   disabled: PropTypes.bool,
+   children: PropTypes.node.isRequired,
+   className: PropTypes.string,
+   onClick: PropTypes.func,
+}
 export default Button;
