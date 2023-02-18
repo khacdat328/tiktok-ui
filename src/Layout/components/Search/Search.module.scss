@@ -62,12 +62,14 @@
 
 .clear-btn,
 .loading {
-   position: absolute;
-   right: calc(var(--search-button-width) + 16px);
-   top: 50%;
-   transform: translateY(-50%);
+   // position: absolute;
+   // right: calc(var(--search-button-width) + 16px);
+   // top: 50%;
+   // transform: translateY(-50%);
+   // height: 100%;
+   padding: 0 10px;
    font-size: 16px;
-//    display: none;
+   //    display: none;
 }
 
 .search-input:not(:placeholder-shown) ~ .search-button {

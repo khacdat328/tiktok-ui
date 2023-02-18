@@ -15,7 +15,6 @@ import {
 import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-
 import config from '~/config';
 import avatarIcon from '~/assets/images/User_Avatar.png';
 import image from '~/assets/images';
