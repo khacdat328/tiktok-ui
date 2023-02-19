@@ -20,6 +20,9 @@
    // background: rgba(255, 255, 255, 1);
 }
 
+.site-logo{
+   min-width: 300px;
+}
 .site-logo img {
    vertical-align: middle;
 }
@@ -39,26 +42,29 @@
 
 .action-btn {
    position: relative;
-   font-size: 2rem;
-   padding: 3px;
+   display: flex;
+   font-size: 2.2rem;
    color: #161823;
-   cursor: pointer;
+   background-color: transparent;
+   height: 32px;
    margin-left: 16px;
+   padding: 3px 3px 0;
+   cursor: pointer;
 }
 
 .badge {
    position: absolute;
-   top: -5px;
-   right: -5px;
-   font-size: 1.1rem;
-   color: var(--white);
-   background-color: var(--primary);
-   font-weight: 600;
-   font-family: var(--font-family);
-   padding: 0 6px;
-   height: 1.5rem;
+   top: 0px;
+   right: -3px;
+   padding: 0px 6px;
+   height: 1.6rem;
+   line-height: 1.6rem;
    border-radius: 10px;
-   line-height: 1.5rem;
+   font-size: 1.2rem;
+   font-weight: 600;
+   color: var(--white);
+   font-family: var(--font-family);
+   background-color: var(--primary);
 }
 
 .user-avatar {

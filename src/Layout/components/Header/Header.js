@@ -15,6 +15,7 @@ import {
 import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { MessageIcon, InboxIcon } from '~/components/Icons';
 import config from '~/config';
 import avatarIcon from '~/assets/images/User_Avatar.png';
 import image from '~/assets/images';
@@ -109,13 +110,13 @@ function Header() {
 
                      <Tippy delay={[0, 100]} content="Message">
                         <button className={cx('action-btn')}>
-                           <FontAwesomeIcon icon={faPaperPlane} />
+                           <MessageIcon />
                         </button>
                      </Tippy>
 
                      <Tippy delay={[0, 100]} content="Inbox">
                         <button className={cx('action-btn')}>
-                           <FontAwesomeIcon icon={faMessage} />
+                           <InboxIcon />
                            <span className={cx('badge')}>12</span>
                         </button>
                      </Tippy>

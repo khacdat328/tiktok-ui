@@ -79,7 +79,7 @@ function Search() {
                   type="text"
                   value={searchValue}
                   className={cx('search-input')}
-                  placeholder="Search account or video"
+                  placeholder="Search accounts and video"
                   spellCheck="false"
                   onChange={handleChange}
                   onFocus={() => setShowResult(true)}

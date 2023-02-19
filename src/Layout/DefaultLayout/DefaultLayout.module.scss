@@ -7,10 +7,15 @@
 .container {
    margin-top: 60px;
    width: 1150px;
-   padding: 0 20px;
+   max-width: 100%;
+   // padding: 0 20px;
    display: flex;
+   justify-content: space-between;
+
 }
 .content {
    flex: 1;
+   width: 692px;
+   max-width: 692px;
    background-color: #cfc;
 }
