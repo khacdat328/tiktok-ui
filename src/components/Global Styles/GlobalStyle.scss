@@ -72,6 +72,12 @@ a {
    src: url('/assets/fonts/Proxima-Nova-Bold.woff');
    font-weight: 700;
 }
+
+@font-face {
+   font-family: SofiaPro;
+   src: url('/assets/fonts/sofiapro-bold.woff2');
+   font-weight: 700;
+}
 // custom tippy tooltip
 body {
    .tippy-box {
