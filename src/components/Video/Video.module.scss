@@ -1,0 +1,95 @@
+.wrapper {
+   position: relative;
+   padding: 20px 0;
+   display: flex;
+   max-width: 692px;
+}
+.avatar {
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+}
+.content {
+   margin-left: 12px;
+}
+.text {
+}
+.author {
+   display: flex;
+   align-items: baseline;
+}
+.nickname {
+   font-family: SofiaPro;
+   font-size: 1.8rem;
+   line-height: 25px;
+   margin-right: 4px;
+}
+.username {
+   font-size: 1.4rem;
+   font-weight: 400;
+   line-height: 28px;
+}
+.description {
+   max-width: 510px;
+}
+.description-content {
+   font-size: 1.6rem;
+   line-height: 22px;
+}
+.hashtag {
+   margin-left: 4px;
+}
+.music {
+   color: #161823;
+   font-weight: 600;
+   font-size: 16px;
+   line-height: 22px;
+   margin-top: 4px;
+   margin-bottom: 12px;
+}
+.follow-btn {
+   position: absolute;
+   top: 28px;
+   right: 0;
+}
+.video {
+   display: flex;
+   align-items: flex-end;
+   // height: calc(450px + (100vw - 768px) / 1152 * 100);
+}
+.video-item {
+   cursor: pointer;
+   border-radius: 8px;
+   overflow: hidden;
+   margin-right: 20px;
+   max-height: 480px;
+   video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+.interact-btn {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.icon {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   background-color: #1618230f;
+   width: 48px;
+   height: 48px;
+   margin-top: 8px;
+   margin-bottom: 8px;
+   font-size: 24px;
+}
+.number {
+   color: rgba(22, 24, 35, 0.75);
+   line-height: 17px;
+   font-size: 1.2rem;
+}

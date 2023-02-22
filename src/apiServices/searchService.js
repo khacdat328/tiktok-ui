@@ -8,8 +8,10 @@ export const search = async (q, type = 'less') => {
             type,
          },
       });
+      console.log(res);
       return res.data;
    } catch (error) {
       console.log(error);
    }
 };
+
