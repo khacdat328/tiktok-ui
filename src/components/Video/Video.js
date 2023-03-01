@@ -1,41 +1,70 @@
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
+import { faCommentDots, faHeart, faMusic, faShare, faShareAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useEffect, useState, useRef } from 'react';
 
 import { Wrapper as Popper } from '../Popper';
-import styles from './Video.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentDots, faHeart, faMusic, faShare, faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button';
-
+import styles from './Video.module.scss';
+import useElementOnScreen from '~/hooks/useElementOnScreen';
 const cx = classNames.bind(styles);
-function Video() {
+function Video({ video }) {
+   // const [description, setDescription] = useState('');
+   // const [tags, setTags] = useState([]);
+   const [playing, setPlaying] = useState(false);
+
+   const videoRef = useRef(null);
+   const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.7,
+   };
+
+   const isVisibile = useElementOnScreen(options, videoRef);
+   
+   // const onVideoClick = () => {
+   //    if (playing) {
+   //       videoRef.current.pause();
+   //       setPlaying(!playing);
+   //    } else {
+   //       videoRef.current.currentTime = 0;
+   //       videoRef.current.play();
+   //       setPlaying(!playing);
+   //    }
+   // };
+   useEffect(() => {
+      if (isVisibile) {
+         if (!playing) {
+            videoRef.current.play();
+            setPlaying(true);
+         }
+      } else {
+         if (playing) {
+            videoRef.current.pause();
+            setPlaying(false);
+         }
+      }
+   }, [isVisibile]);
+
    return (
       <div className={cx('wrapper')}>
-         <img
-            className={cx('avatar')}
-            src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ff6cfa684d7eb1c00409c4214d8ab62f~c5_100x100.jpeg?x-expires=1677128400&x-signature=Foaoi2u4H9UE6vR1a3Ni1JPMdhE%3D"
-            alt=""
-         />
+         <img className={cx('avatar')} src={video.user.avatar} alt={video.user.nickname} />
          <div className={cx('content')}>
             <div className={cx('text-content')}>
                <div className={cx('author')}>
-                  <h3 className={cx('nickname')}>Chau Khac Dat</h3>
-                  <h4 className={cx('username')}>Khacdat1211</h4>
+                  <h3 className={cx('nickname')}>{video.user.nickname}</h3>
+                  <h4 className={cx('username')}>{`${video.user.first_name} ${video.user.last_name}`}</h4>
                </div>
                <div className={cx('description')}>
-                  <span className={cx('description-content')}>
-                     Lorem ipsum, dolor sit amet consectetur adipisicing elit adipisicing elit
-                  </span>
-                  <a href="/#" className={cx('hashtag')}>
-                     #abcd
-                  </a>
-                  <a href="/#" className={cx('hashtag')}>
-                     #assss
-                  </a>
+                  <span className={cx('description-content')}>{video.description}</span>
+                  {/* <a href="/#" className={cx('hashtag')}>
+                     #hashtag
+                  </a> */}
                </div>
                <div className={cx('music')}>
                   <FontAwesomeIcon icon={faMusic} />
-                  <a href="/#"> Nhạc nền - Chí Khang</a>
+                  <a href="/#"> {video.music}</a>
                </div>
                <Button type="outline" size="small" className={cx('follow-btn')}>
                   Follow
@@ -44,12 +73,14 @@ function Video() {
             <div className={cx('video')}>
                <div className={cx('video-item')}>
                   <video
-                     src="https://files.fullstack.edu.vn/f8-tiktok/videos/1658-63f0d78917bf8.mp4"
+                     ref={videoRef}
+                     src={video.file_url}
                      controls
                      loop
                      muted
                      playsInline
                      style={{ width: '286px' }}
+                     poster={video.thumb_url}
                   ></video>
                </div>
                <div className={cx('action')}>
@@ -57,19 +88,19 @@ function Video() {
                      <span className={cx('icon')}>
                         <FontAwesomeIcon icon={faHeart} />
                      </span>
-                     <strong className={cx('number')}>44</strong>
+                     <strong className={cx('number')}>{video.likes_count}</strong>
                   </button>
                   <button className={cx('interact-btn')}>
                      <span className={cx('icon')}>
                         <FontAwesomeIcon icon={faCommentDots} />
                      </span>
-                     <strong className={cx('number')}>44</strong>
+                     <strong className={cx('number')}>{video.comments_count}</strong>
                   </button>
                   <button className={cx('interact-btn')}>
                      <span className={cx('icon')}>
                         <FontAwesomeIcon icon={faShare} />
                      </span>
-                     <strong className={cx('number')}>44</strong>
+                     <strong className={cx('number')}>{video.shares_count}</strong>
                   </button>
                </div>
             </div>

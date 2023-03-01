@@ -62,7 +62,7 @@
    border-radius: 8px;
    overflow: hidden;
    margin-right: 20px;
-   max-height: 480px;
+   height: calc(450px + (100vw - 768px) / 1152 * 100);
    video {
       display: block;
       width: 100%;

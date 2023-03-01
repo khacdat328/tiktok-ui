@@ -1,6 +1,16 @@
 .wrapper {
-   width: 356px;
+   width: 100%;
+   max-width: 356px;
+   height: calc(100vh - var(--header-height));
+   overflow-y: scroll;
    // background-color: #ccf;
    padding: 20px 0 26px 8px;
 
+}
+
+.Login{
+   font-family: SofiaPro;
+   font-size: 1.8rem;
+   font-weight: 700;
+   line-height: 25px;
 }

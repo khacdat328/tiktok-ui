@@ -1,6 +1,6 @@
 .wrapper {
-  height: 36px;
-   font-family:var(--font-family);
+   height: 36px;
+   font-family: var(--font-family);
    cursor: pointer;
    display: flex;
    justify-content: center;
@@ -76,6 +76,13 @@
    padding: 4px 10px;
 }
 
+.large {
+   width: 100%;
+   min-width: 168px;
+   min-height: 48px;
+   margin-top: 20px;
+   padding: 6px 8px;
+}
 .icon + .title,
 .title + .icon {
    margin-left: 8px;

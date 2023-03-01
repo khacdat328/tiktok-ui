@@ -22,17 +22,21 @@ function SidebarAccount({ label, data }) {
    };
 
    useEffect(() => {
-      suggested.suggestedFollowing(perPage).then((data) => setAccount(data));
+      suggested
+         .suggestedFollowing(perPage)
+         .then((data) => {
+            setAccount(data);
+         })
+         .catch((error) => console.log(error));
    }, [perPage]);
 
-   console.log(accounts);
    return (
       <div className={cx('wrapper')}>
          <p className={cx('label')}>{label}</p>
          {accounts && accounts.map((account, index) => <AccountItem key={index} data={account} />)}
 
          <button className={cx('see-all-btn')} onClick={showMore}>
-            <p className={cx('see-all')}>{accounts.length === initPerPage ? `See all` : `See less`}</p>
+            <p className={cx('see-all')}>{accounts && accounts.length === initPerPage ? `See all` : `See less`}</p>
          </button>
       </div>
    );
