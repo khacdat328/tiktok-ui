@@ -24,6 +24,8 @@ import styles from './Header.module.scss';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
 import Search from '../Search';
+import Modal from '../Modal';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -60,7 +62,7 @@ const MENU_ITEMS = [
 ];
 function Header() {
    const currentUser = false;
-
+   const [showModal, setShowModal] = useState(false);
    // const handleMenuChange = (MenuItem) => console.log(MenuItem);
 
    const userMenu = [
@@ -126,7 +128,9 @@ function Header() {
                      <Button type="secondary" leftIcon={<FontAwesomeIcon icon={faPlus} />}>
                         Upload
                      </Button>
-                     <Button type="primary">Log in</Button>
+                     <Button type="primary" onClick={() => setShowModal(true)}>
+                        Log in
+                     </Button>
                   </>
                )}
                <Menu items={currentUser ? userMenu : MENU_ITEMS}>
@@ -140,6 +144,7 @@ function Header() {
                </Menu>
             </div>
          </div>
+         {showModal && <Modal />}
       </header>
    );
 }

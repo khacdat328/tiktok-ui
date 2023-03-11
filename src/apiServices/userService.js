@@ -11,9 +11,10 @@ export const suggestedFollowing = async (per_page) => {
       });
       return res.data;
    } catch (error) {
-      console.log(error);
+      console.log({ error });
    }
 };
+
 export const forYouVideo = async (page) => {
    try {
       const res = await request.get('videos?', {
@@ -24,6 +25,6 @@ export const forYouVideo = async (page) => {
       });
       return res;
    } catch (error) {
-      console.log(error);
+      console.log({ error });
    }
 };

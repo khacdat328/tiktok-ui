@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { publicRoutes } from '~/routes'
 import { DefaultLayout, HeaderOnly } from './Layout'
-
+import Modal from './Layout/components/Modal'
 function App() {
   return (
     <Router>
@@ -17,6 +17,7 @@ function App() {
               Layout = Fragment
             }
             return (
+              
               <Route
                 key={index}
                 path={route.path}

@@ -7,7 +7,7 @@ const Image = forwardRef(({ src, alt, className, fallback: customFallback = imag
    const [fallback, setFallBack] = useState('');
 
    const handleError = () => {
-      setFallBack(fallback);
+      setFallBack(customFallback);
    };
    return (
       <img

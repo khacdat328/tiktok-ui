@@ -1,14 +1,21 @@
 .wrapper {
    width: 100%;
    max-width: 356px;
+   // height: calc(100vh - var(--header-height));
+   // overflow-y: scroll;
+   // background-color: #ccf;
+   // padding: 20px 0 26px 8px;
+}
+.fixed-sidebar {
+   position: fixed;
+   width: 100%;
+   max-width: 356px;
    height: calc(100vh - var(--header-height));
    overflow-y: scroll;
-   // background-color: #ccf;
    padding: 20px 0 26px 8px;
-
 }
 
-.Login{
+.Login {
    font-family: SofiaPro;
    font-size: 1.8rem;
    font-weight: 700;

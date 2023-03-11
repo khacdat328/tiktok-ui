@@ -3,20 +3,42 @@
    padding: 20px 0;
    display: flex;
    max-width: 692px;
+   &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      -webkit-transform: scaleY(0.5);
+      -moz-transform: scaleY(0.5);
+      -ms-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+      background: rgba(22, 24, 35, 0.2);
+   }
 }
-.avatar {
+
+.link-avatar {
+   display: block;
    width: 56px;
    height: 56px;
    border-radius: 50%;
+   overflow: hidden;
+}
+.avatar {
+   width: 100%;
+   object-fit: contain;
 }
 .content {
    margin-left: 12px;
 }
-.text {
-}
+
 .author {
    display: flex;
    align-items: baseline;
+   &:hover .nickname {
+      text-decoration: underline;
+   }
 }
 .nickname {
    font-family: SofiaPro;
@@ -31,6 +53,7 @@
 }
 .description {
    max-width: 510px;
+   margin-right: 115px;
 }
 .description-content {
    font-size: 1.6rem;
@@ -38,6 +61,10 @@
 }
 .hashtag {
    margin-left: 4px;
+   font-weight: 600;
+   &:hover {
+      text-decoration: underline;
+   }
 }
 .music {
    color: #161823;
@@ -46,6 +73,9 @@
    line-height: 22px;
    margin-top: 4px;
    margin-bottom: 12px;
+   &:hover {
+      text-decoration: underline;
+   }
 }
 .follow-btn {
    position: absolute;
@@ -55,6 +85,9 @@
 .video {
    display: flex;
    align-items: flex-end;
+   width: 100%;
+   max-width: 624px;
+
    // height: calc(450px + (100vw - 768px) / 1152 * 100);
 }
 .video-item {
@@ -62,11 +95,12 @@
    border-radius: 8px;
    overflow: hidden;
    margin-right: 20px;
-   height: calc(450px + (100vw - 768px) / 1152 * 100);
+   max-width: 100%;
    video {
       display: block;
       width: 100%;
       height: 100%;
+      max-height: calc(450px + (100vw - 768px) / 1152 * 100);
       object-fit: cover;
    }
 }
@@ -85,11 +119,13 @@
    width: 48px;
    height: 48px;
    margin-top: 8px;
-   margin-bottom: 8px;
+   margin-bottom: 6px;
    font-size: 24px;
 }
 .number {
+   font-family: ProximaNova;
    color: rgba(22, 24, 35, 0.75);
    line-height: 17px;
    font-size: 1.2rem;
+   font-weight: 700;
 }
