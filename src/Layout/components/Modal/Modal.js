@@ -15,6 +15,7 @@ export const setChildrenContext = createContext(null);
 function Modal() {
    const [children, setChildren] = useState('LoginOption');
    const [navigateBack, setNavigateBack] = useState(['LoginOption']);
+   const [showModal, setShowModal] = useState(false);
 
    const components = {
       LoginOption: LoginOption,
@@ -29,8 +30,9 @@ function Modal() {
       return e;
    };
    const Comp = components[children];
+ 
    return (
-      <setChildrenContext.Provider value={{ children, setChildren, setNavigateBack }}>
+      <setChildrenContext.Provider value={{ children, setChildren, setNavigateBack}}>
          <Portal>
             <div className={cx('background')}>
                <div className={cx('wrapper')}>

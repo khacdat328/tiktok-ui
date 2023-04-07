@@ -52,17 +52,19 @@ function Menu({ children, items = [], hideOnClick = false, onChange }) {
    };
 
    return (
-      <Tippy
-         interactive
-         delay={[0, 400]}
-         offset={[16, 8]}
-         hideOnClick={hideOnClick}
-         placement="bottom-end"
-         render={renderResult}
-         onHide={handleResetMenu}
-      >
-         {children}
-      </Tippy>
+      <div>
+         <Tippy
+            interactive
+            delay={[0, 400]}
+            offset={[16, 8]}
+            hideOnClick={hideOnClick}
+            placement="bottom-end"
+            render={renderResult}
+            onHide={handleResetMenu}
+         >
+            {children}
+         </Tippy>
+      </div>
    );
 }
 

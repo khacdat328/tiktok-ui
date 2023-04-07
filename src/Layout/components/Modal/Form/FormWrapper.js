@@ -19,9 +19,9 @@ function FormWrapper({ children }) {
             <div className={cx('content')}>{children}</div>
          </div>
          <div className={cx('signup-container')}>
-            <div>{signUp ? `Don't have an account?` : 'Already have an account?'}</div>
+            <div>{signUp ? `Already have an account?` : `Don't have an account?`}</div>
             <button className={cx('signup')} onClick={switchingForm}>
-               {signUp ? 'Login' : 'Sign Up'}
+               {signUp ? 'Login' : 'Sign up'}
             </button>
          </div>
       </div>

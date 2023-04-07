@@ -9,6 +9,8 @@ const cx = classNames.bind(styles);
 const ForgotPwd = 'ResetPwd';
 function EmailLogin({ ...props }) {
    const ModalContext = useContext(setChildrenContext);
+
+   console.log(ModalContext);
    const [emailInput, setEmailInput] = useState('');
    const [pwdInput, setPwdInput] = useState('');
    const [showPwd, setShowPwd] = useState(false);

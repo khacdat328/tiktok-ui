@@ -1,0 +1,1 @@
+export const modalIsShow= (state) => state.modal.show

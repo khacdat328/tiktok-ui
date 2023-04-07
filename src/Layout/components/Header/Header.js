@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKeyboard, faMessage, faPaperPlane } from '@fortawesome/free-regular-svg-icons';
+import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
 import {
    faArrowRightFromBracket,
    faCoins,
@@ -25,9 +25,11 @@ import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
 import Search from '../Search';
 import Modal from '../Modal';
-import { useState } from 'react';
-
+import { modalSlice } from '~/redux/slice/ModalSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { modalIsShow } from '~/redux/selector';
 const cx = classNames.bind(styles);
+
 const MENU_ITEMS = [
    {
       icon: <FontAwesomeIcon icon={faEarthAsia} />,
@@ -60,11 +62,14 @@ const MENU_ITEMS = [
       title: 'Keyboard shortcuts',
    },
 ];
-function Header() {
-   const currentUser = false;
-   const [showModal, setShowModal] = useState(false);
-   // const handleMenuChange = (MenuItem) => console.log(MenuItem);
 
+function Header() {
+   const isModalshow = useSelector(modalIsShow)
+   const dispatch = useDispatch();
+   const handleToggleShowModal = () => {
+      dispatch(modalSlice.actions.setShowModal(true));
+   };
+   const currentUser = false;
    const userMenu = [
       {
          icon: <FontAwesomeIcon icon={faUser} />,
@@ -94,6 +99,7 @@ function Header() {
          separate: true,
       },
    ];
+   console.log(isModalshow)
    return (
       <header className={cx('wrapper')}>
          <div className={cx('inner')}>
@@ -128,7 +134,7 @@ function Header() {
                      <Button type="secondary" leftIcon={<FontAwesomeIcon icon={faPlus} />}>
                         Upload
                      </Button>
-                     <Button type="primary" onClick={() => setShowModal(true)}>
+                     <Button type="primary" onClick={handleToggleShowModal}>
                         Log in
                      </Button>
                   </>
@@ -144,7 +150,7 @@ function Header() {
                </Menu>
             </div>
          </div>
-         {showModal && <Modal />}
+         {isModalshow && <Modal />}
       </header>
    );
 }
